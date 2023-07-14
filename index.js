@@ -1,8 +1,14 @@
 const { Client, LocalAuth } = require('whatsapp-web.js');
 const fs = require("fs");
 const qrcode = require('qrcode-terminal');
-
-
+const express = require ('express');
+const app = express ();
+app.get('/', (req, res)=>{
+  res.send ('first test of API')
+});
+app.get('/link', (res)=>{
+  res.send('link webpage')
+});
 
   const client = new Client({
     authStrategy: new LocalAuth({ clientId: "client-one" }),
@@ -42,8 +48,9 @@ client.on("authenticated", (session) => {
       }
     };
     getChatHistory(client);
-    client.sendMessage(chatId, text).then(msg=>console.log('message sent'));
-    
+    setInterval(() => {
+      client.sendMessage(chatId, text).then(msg=>console.log('message sent'));
+    }, 6000);
     //getUnreadMsg(client);
 });
 
