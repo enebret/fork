@@ -52,7 +52,7 @@ client.on("authenticated", (session) => {
     getChatHistory(client);
     
     setInterval(() => {
-      async function scrapFunction() {
+      async function scrapFunction(client) {
         try {
           async function extractl(q){
             const g = x(q, '.unformatted-list', [
@@ -130,13 +130,13 @@ client.on("authenticated", (session) => {
               let ad = '\n\n'+'𝐆𝐫𝐨𝐮𝐩 𝐈𝐧𝐯𝐢𝐭𝐞 𝐋𝐢𝐧𝐤: https://t.me/+mRKfd_GxHwNmNDk0'+'\n\n'
              let r = obj.head+'\n'+obj.title+ad+'Deadline: '+obj.deadline+'\n'+obj.link
     
-          client.sendMessage(groupId, r).then(msg=>console.log('message sent'));
+          client.sendMessage(groupId, r).then(()=>console.log('message sent'));
         } catch (error) {
           console.log(error)
         }
       };
-scrapFunction();
-    }, 10000);
+scrapFunction(client);
+    }, 60000);
     //getUnreadMsg(client);
 });
 
