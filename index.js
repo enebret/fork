@@ -37,8 +37,8 @@ client.on("authenticated", (session) => {
   client.on('ready', () => {
     console.log('Client is ready!');
     const text = "Alright";
-    const chatId = '2348130135975@c.us';
-    const groupId = '120363045867794165@g.us';
+    const chatID = '2348130135975@c.us';
+    const groupID = '120363045867794165@g.us';
     //client.getChatById(groupId).then(chat=>console.log(chat));
     async function getChatHistory(client) {
       try {
@@ -130,7 +130,7 @@ client.on("authenticated", (session) => {
               let ad = '\n\n'+'𝐆𝐫𝐨𝐮𝐩 𝐈𝐧𝐯𝐢𝐭𝐞 𝐋𝐢𝐧𝐤: https://t.me/+mRKfd_GxHwNmNDk0'+'\n\n'
              let r = obj.head+'\n'+obj.title+ad+'Deadline: '+obj.deadline+'\n'+obj.link
     
-          client.sendMessage(groupId, r).then(()=>console.log('message sent'));
+          client.sendMessage(chatID, r).then(()=>console.log('message sent'));
         } catch (error) {
           console.log(error)
         }
