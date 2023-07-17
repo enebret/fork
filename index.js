@@ -42,7 +42,7 @@ client.on("authenticated", (session) => {
     //client.getChatById(groupId).then(chat=>console.log(chat));
     async function getChatHistory(client) {
       try {
-        const chatThread = await client.getChatById(chatId);
+        const chatThread = await client.getChatById(chatID);
         //Logger.log(allChats)
         console.log(chatThread);
       } catch (e) {
@@ -130,7 +130,7 @@ client.on("authenticated", (session) => {
               let ad = '\n\n'+'𝐆𝐫𝐨𝐮𝐩 𝐈𝐧𝐯𝐢𝐭𝐞 𝐋𝐢𝐧𝐤: https://t.me/+mRKfd_GxHwNmNDk0'+'\n\n'
              let r = obj.head+'\n'+obj.title+ad+'Deadline: '+obj.deadline+'\n'+obj.link
     
-          client.sendMessage(chatID, r).then(()=>console.log('message sent'));
+          client.sendMessage(groupID, r).then(()=>console.log('message sent'));
         } catch (error) {
           console.log(error)
         }
